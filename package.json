@@ -1,0 +1,29 @@
+{
+  "name": "pandoc-web",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.18.2",
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.11",
+    "@babel/node": "^7.22.10",
+    "@babel/preset-env": "^7.22.10",
+    "@vitejs/plugin-vue": "^4.3.3",
+    "concurrently": "^8.2.1",
+    "prettier": "^3.0.2",
+    "vite": "^4.4.9"
+  },
+  "scripts": {
+    "_build-backend": "babel backend/src/main.js -d backend/dist",
+    "_start-backend": "babel-node backend/src/main.js",
+    "_build-frontend": "vite build frontend",
+    "_start-frontend": "vite frontend",
+    "build": "npm run _build-backend && npm run _build-frontend",
+    "dev": "concurrently --kill-others \"npm run _start-backend\" \"npm run _start-frontend\""
+  },
+  "engines": {
+    "node": "18"
+  }
+}

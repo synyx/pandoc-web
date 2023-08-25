@@ -3,9 +3,9 @@
     <v-main>
       <v-app-bar>
         <template #title>
-          <div style="display: flex; align-items: center">
+          <div class="tw-flex tw-items-center">
             <v-img :inline="true" width="40px" src="/panda.svg" />
-            <h1 style="font-size: 22px; margin-left: 8px">Pandoc Web</h1>
+            <h1 class="text-h6 tw-ml-3">Pandoc Web</h1>
           </div>
         </template>
         <template #append>

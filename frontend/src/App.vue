@@ -9,7 +9,7 @@
           </div>
         </template>
         <template #append>
-          <v-btn :icon="isDarkTheme ? 'mdi-weather-sunny' : 'mdi-weather-night'" @click="toggleTheme" />
+          <ThemeToggle />
         </template>
       </v-app-bar>
       <HelloWorld />
@@ -18,15 +18,6 @@
 </template>
 
 <script setup>
-import { useTheme } from 'vuetify';
 import HelloWorld from '@/components/HelloWorld.vue';
-import { computed } from 'vue';
-
-const theme = useTheme();
-
-const isDarkTheme = computed(() => Boolean(theme.global.current.value.dark));
-
-function toggleTheme() {
-  theme.global.name.value = theme.global.current.value.dark ? 'light' : 'dark';
-}
+import ThemeToggle from '@/components/ThemeToggle.vue';
 </script>

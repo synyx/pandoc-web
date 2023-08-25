@@ -12,12 +12,13 @@
           <ThemeToggle />
         </template>
       </v-app-bar>
-      <HelloWorld />
+
+      <PandocConverter />
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-import HelloWorld from '@/components/HelloWorld.vue';
 import ThemeToggle from '@/components/ThemeToggle.vue';
+import PandocConverter from '@/components/PandocConverter.vue';
 </script>

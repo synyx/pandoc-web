@@ -25,8 +25,8 @@
   "scripts": {
     "_build-backend": "babel backend/src/main.js -d backend/dist",
     "_start-backend": "babel-node backend/src/main.js",
-    "_build-frontend": "vite build frontend",
-    "_start-frontend": "vite frontend",
+    "_build-frontend": "vite build",
+    "_start-frontend": "vite",
     "build": "npm run _build-backend && npm run _build-frontend",
     "dev": "concurrently --kill-others \"npm run _start-backend\" \"npm run _start-frontend\""
   },

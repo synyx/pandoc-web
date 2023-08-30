@@ -4,7 +4,14 @@
       <v-btn>Markdown</v-btn>
       <v-btn>Textile</v-btn>
     </v-btn-toggle>
-    <v-textarea :auto-grow="false" :rows="25" :no-resize="true" :hide-details="true"></v-textarea>
+    <v-textarea
+      v-model="textProperty"
+      :auto-grow="false"
+      :rows="25"
+      :readonly="readOnly"
+      :no-resize="true"
+      :hide-details="true"
+    ></v-textarea>
   </v-container>
 </template>
 
@@ -18,11 +25,24 @@ const props = defineProps({
     type: String,
     required: true,
   },
+  text: {
+    type: String,
+    required: true,
+  },
+  readOnly: {
+    type: Boolean,
+    default: false,
+  },
 });
-const emit = defineEmits(['update:format']);
+const emit = defineEmits(['update:format', 'update:text']);
 
 const selectedOption = computed({
   get: () => OPTIONS.indexOf(props.format),
   set: (value) => emit('update:format', OPTIONS[value] || OPTIONS[0]),
+});
+
+const textProperty = computed({
+  get: () => props.text,
+  set: (value) => emit('update:text', value),
 });
 </script>

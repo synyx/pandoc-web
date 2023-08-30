@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "dependencies": {
     "@mdi/font": "^7.2.96",
+    "axios": "^1.5.0",
     "express": "^4.18.2",
     "roboto-fontface": "^0.10.0",
     "vue": "^3.3.4",

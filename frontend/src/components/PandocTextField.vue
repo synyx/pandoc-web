@@ -18,7 +18,7 @@
 <script setup>
 import { computed } from 'vue';
 
-const OPTIONS = ['markdown', 'textile'];
+const OPTIONS = ['gfm', 'textile'];
 
 const props = defineProps({
   format: {

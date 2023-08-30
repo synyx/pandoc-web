@@ -2,7 +2,7 @@ import express from 'express';
 import { promisify } from 'node:util';
 import { exec } from 'node:child_process';
 
-const VALID_FORMATS = ['markdown', 'textile'];
+const VALID_FORMATS = ['markdown', 'gfm', 'textile'];
 
 const app = express();
 const port = 8080;
@@ -11,7 +11,7 @@ app.use(express.text());
 app.use(express.static('frontend/dist'));
 
 app.post('/api/pandoc/run', async (req, res) => {
-  const from = req.query.from || 'markdown';
+  const from = req.query.from || 'gfm';
   const to = req.query.to || 'textile';
 
   if (VALID_FORMATS.indexOf(from) < 0 || VALID_FORMATS.indexOf(to) < 0) {

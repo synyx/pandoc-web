@@ -13,14 +13,14 @@ import axios from 'axios';
 
 const INPUT_DEBOUNCE_DELAY_IN_MS = 500;
 
-const inputFormat = ref('markdown');
+const inputFormat = ref('gfm');
 const inputText = ref('');
 const outputText = ref('');
 
 const firstFormat = computed({ get: () => inputFormat.value, set: (value) => (inputFormat.value = value) });
 const secondFormat = computed({
-  get: () => (inputFormat.value === 'markdown' ? 'textile' : 'markdown'),
-  set: (value) => (inputFormat.value = value === 'markdown' ? 'textile' : 'markdown'),
+  get: () => (inputFormat.value === 'gfm' ? 'textile' : 'gfm'),
+  set: (value) => (inputFormat.value = value === 'gfm' ? 'textile' : 'gfm'),
 });
 
 function runPandoc() {

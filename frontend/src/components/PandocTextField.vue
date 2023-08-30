@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <v-btn-toggle class="tw-mb-4" mandatory="mandatory" v-model="selectedOption">
-      <v-btn>Markdown</v-btn>
-      <v-btn>Textile</v-btn>
+      <v-btn color="primary">Markdown</v-btn>
+      <v-btn color="primary">Textile</v-btn>
     </v-btn-toggle>
     <v-textarea
       v-model="textProperty"

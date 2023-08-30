@@ -1,7 +1,7 @@
 <template>
   <v-app>
     <v-main>
-      <v-app-bar>
+      <v-app-bar color="primary" density="compact">
         <template #title>
           <div class="tw-flex tw-items-center">
             <v-img :inline="true" width="40px" src="/panda.svg" />

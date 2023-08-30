@@ -1,5 +1,5 @@
 const LOCAL_STORAGE_KEY = 'theme';
-const DEFAULT_THEME = 'dark';
+const DEFAULT_THEME = 'light';
 const VALID_THEMES = ['light', 'dark'];
 
 export function getSavedTheme() {

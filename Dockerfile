@@ -24,6 +24,9 @@ WORKDIR /app
 RUN rm -rf ./*
 
 COPY --from=build /app/package*.json ./
+
+RUN npm install --production
+
 COPY --from=build /app/backend/dist ./backend/dist
 COPY --from=build /app/frontend/dist ./frontend/dist
 

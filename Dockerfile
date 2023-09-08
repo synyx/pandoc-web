@@ -32,7 +32,10 @@ COPY --from=build /app/frontend/dist ./frontend/dist
 
 EXPOSE 8080
 
+# Add tini init system for process reaping
+RUN apk add --no-cache tini
+
 # From node dockerfile
-ENTRYPOINT ["docker-entrypoint.sh"]
+ENTRYPOINT ["tini", "--", "docker-entrypoint.sh"]
 
 CMD [ "node", "backend/dist/main.js" ]

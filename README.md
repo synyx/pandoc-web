@@ -34,4 +34,9 @@ node ./backend/dist/main.js
 
 The application will now be running on port `8080` and serve the frontend as well as the API.
 
-Running the application expects pandoc to be installed on your machine and be accessible with the configured `PATH` env variable. 
+Running the application expects pandoc to be installed on your machine and be accessible with the configured `PATH` env variable.
+
+## License
+
+This project is licensed under the MIT license.
+The panda icon is by OpenMoji – the open-source emoji and icon project. License: CC BY-SA 4.0

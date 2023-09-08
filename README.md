@@ -36,6 +36,16 @@ The application will now be running on port `8080` and serve the frontend as wel
 
 Running the application expects pandoc to be installed on your machine and be accessible with the configured `PATH` env variable.
 
+## Docker
+
+You can run this via Docker using the published package:
+
+```shell
+docker run --rm -p 8080:8080 ghcr.io/synyx/pandocweb:latest
+```
+
+You can now open the web interface locally on http://localhost:8080.
+
 ## License
 
 This project is licensed under the MIT license.

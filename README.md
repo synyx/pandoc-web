@@ -2,6 +2,8 @@
 
 This project aims to create a web interface for the pandoc command line tool to make it more accessible and easier to use.
 
+![PandocWeb Screenshot](repo/pandocweb.png)
+
 ## Dev
 
 First install all dependencies:

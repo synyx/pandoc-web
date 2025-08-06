@@ -9,7 +9,7 @@ on:
 env:
   IMAGE_NAME: pandocweb
 jobs:
-  push:
+  release:
     runs-on: ubuntu-latest
     permissions:
       packages: write

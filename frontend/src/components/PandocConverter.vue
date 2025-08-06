@@ -1,5 +1,5 @@
 <template>
-  <div class="tw-grid tw-grid-cols-2 tw-grid-rows-1 tw-space-x-4 tw-px-4 tw-py-6 tw-h-full">
+  <div class="pandoc-converter">
     <PandocTextField v-model:format="firstFormat" v-model:text="inputText" />
     <PandocTextField v-model:format="secondFormat" :text="outputText" read-only />
   </div>
@@ -44,3 +44,14 @@ watch([inputText, firstFormat], () => {
   debouncedRunPandoc();
 });
 </script>
+
+<style scoped>
+.pandoc-converter {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+
+  padding: 1rem 1.5rem;
+  height: 100%;
+}
+</style>

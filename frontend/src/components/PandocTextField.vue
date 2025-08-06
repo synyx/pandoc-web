@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn-toggle class="tw-mb-4" mandatory="mandatory" v-model="selectedOption">
+    <v-btn-toggle class="toggle-area" mandatory="mandatory" v-model="selectedOption">
       <v-btn color="primary">Markdown</v-btn>
       <v-btn color="primary">Textile</v-btn>
     </v-btn-toggle>
@@ -46,3 +46,9 @@ const textProperty = computed({
   set: (value) => emit('update:text', value),
 });
 </script>
+
+<style scoped>
+.toggle-area {
+  margin-bottom: 1rem;
+}
+</style>

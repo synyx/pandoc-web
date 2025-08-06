@@ -3,9 +3,9 @@
     <v-main>
       <v-app-bar color="primary" density="compact">
         <template #title>
-          <div class="tw-flex tw-items-center">
+          <div class="title">
             <v-img :inline="true" width="40px" src="/panda.svg" />
-            <h1 class="text-h6 tw-ml-3">Pandoc Web</h1>
+            <h1 class="text-h6">Pandoc Web</h1>
           </div>
         </template>
         <template #append>
@@ -22,3 +22,14 @@
 import ThemeToggle from '@/components/ThemeToggle.vue';
 import PandocConverter from '@/components/PandocConverter.vue';
 </script>
+
+<style scoped>
+.title {
+  display: flex;
+  align-items: center;
+}
+
+.title h1 {
+  margin-left: 0.75em;
+}
+</style>

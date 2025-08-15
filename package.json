@@ -9,7 +9,7 @@
     "express": "5.1.0",
     "roboto-fontface": "0.10.0",
     "vue": "3.5.18",
-    "vuetify": "3.9.4"
+    "vuetify": "3.9.5"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "6.0.1",

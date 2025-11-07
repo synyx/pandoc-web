@@ -15,7 +15,7 @@
     "@vitejs/plugin-vue": "6.0.1",
     "npm-run-all2": "8.0.4",
     "prettier": "3.6.2",
-    "vite": "7.1.12",
+    "vite": "7.2.2",
     "vite-plugin-vuetify": "2.1.2"
   },
   "scripts": {

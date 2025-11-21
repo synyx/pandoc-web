@@ -1,4 +1,4 @@
-FROM node:25.2.0-alpine AS build
+FROM node:25.2.1-alpine AS build
 
 WORKDIR /app
 RUN mkdir data
@@ -10,7 +10,7 @@ RUN npm run build
 
 #######################################
 
-FROM node:25.2.0-alpine AS node
+FROM node:25.2.1-alpine AS node
 FROM pandoc/core:3.8.2-alpine
 
 COPY --from=node /usr/lib /usr/lib

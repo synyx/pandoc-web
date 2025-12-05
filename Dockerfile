@@ -11,7 +11,7 @@ RUN npm run build
 #######################################
 
 FROM node:25.2.1-alpine AS node
-FROM pandoc/core:3.8.2-alpine
+FROM pandoc/core:3.8.3-alpine
 
 COPY --from=node /usr/lib /usr/lib
 COPY --from=node /usr/local/share /usr/local/share

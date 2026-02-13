@@ -1,7 +1,7 @@
 {
   "name": "@synyx/pandocweb",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "dependencies": {
     "@mdi/font": "7.4.47",

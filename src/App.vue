@@ -18,7 +18,7 @@
   </v-app>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import ThemeToggle from '@/components/ThemeToggle.vue';
 import PandocConverter from '@/components/PandocConverter.vue';
 </script>

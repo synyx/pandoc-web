@@ -1,0 +1,4 @@
+minimumReleaseAge: 4320 # 3 days
+trustPolicy: no-downgrade
+patchedDependencies:
+  pandoc-wasm: patches/pandoc-wasm.patch

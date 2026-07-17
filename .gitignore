@@ -1,5 +1,4 @@
 node_modules
 *.iml
 .idea
-backend/dist
-frontend/dist
+dist

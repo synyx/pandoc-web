@@ -1,0 +1,13 @@
+diff --git a/src/index.browser.js b/src/index.browser.js
+index c1bf9b41f2e43157b973f36eda17398c7fe73b7d..566fb1127e91003627fbfc4a8bfccdf41197018e 100644
+--- a/src/index.browser.js
++++ b/src/index.browser.js
+@@ -7,7 +7,7 @@
+ import {createPandocInstance} from "./core.js"
+ 
+ // Load WASM file for browser
+-const pandocWasmModule = await import("./pandoc.wasm")
++const pandocWasmModule = await import("./pandoc.wasm?url")
+ const pandocWasmLocation = pandocWasmModule.default
+ const pandocWasmFetch = await fetch(pandocWasmLocation)
+ const pandocWasm = await pandocWasmFetch.arrayBuffer()

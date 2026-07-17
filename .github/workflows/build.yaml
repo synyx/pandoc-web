@@ -7,14 +7,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
+      - uses: pnpm/action-setup@v6
       - uses: actions/setup-node@v6
         with:
           cache: 'pnpm'
-      - name: Install pnpm
-        run: |
-          npm install --global corepack@latest
-          corepack enable
-          corepack prepare --activate
       - name: Build app
         run: |
           pnpm ci

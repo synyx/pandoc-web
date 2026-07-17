@@ -5,7 +5,7 @@
         <template #title>
           <div class="title">
             <v-img :inline="true" width="40px" src="/panda.svg" />
-            <h1 class="text-h6">Pandoc Web</h1>
+            <h1>Pandoc Web</h1>
           </div>
         </template>
         <template #append>
@@ -31,5 +31,6 @@ import PandocConverter from '@/components/PandocConverter.vue';
 
 .title h1 {
   margin-left: 0.75em;
+  font-size: 2rem;
 }
 </style>

@@ -10,7 +10,7 @@ Instead of having to use the command line, it provides a simple-to-use web inter
 You can run this via Docker using the published package:
 
 ```shell
-docker run --rm -p 8080:8080 ghcr.io/synyx/pandocweb:latest
+docker run --rm -p 8080:80 ghcr.io/synyx/pandocweb:latest
 ```
 
 You can now open the web interface locally on http://localhost:8080.

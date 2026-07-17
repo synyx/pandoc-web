@@ -8,8 +8,8 @@
 <script setup>
 import PandocTextField from '@/components/PandocTextField.vue';
 import { computed, ref, watch } from 'vue';
+import { convert } from 'pandoc-wasm';
 import { debounceFunc } from '@/helpers/Debounce';
-import axios from 'axios';
 
 const INPUT_DEBOUNCE_DELAY_IN_MS = 500;
 
@@ -24,19 +24,16 @@ const secondFormat = computed({
 });
 
 function runPandoc() {
-  axios
-    .post('/api/pandoc/run', inputText.value, {
-      headers: {
-        'Content-Type': 'text/plain',
-      },
-      params: {
-        from: firstFormat.value,
-        to: secondFormat.value,
-      },
-    })
-    .then((res) => {
-      outputText.value = String(res.data);
-    });
+  convert(
+    {
+      from: firstFormat.value,
+      to: secondFormat.value,
+    },
+    inputText.value,
+    {},
+  ).then((res) => {
+    outputText.value = String(res.stdout);
+  });
 }
 const debouncedRunPandoc = debounceFunc(runPandoc, INPUT_DEBOUNCE_DELAY_IN_MS);
 

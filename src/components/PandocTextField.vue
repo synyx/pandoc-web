@@ -16,9 +16,9 @@
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed } from "vue";
 
-const OPTIONS = ['gfm', 'textile'];
+const OPTIONS = ["gfm", "textile"];
 
 const props = defineProps({
   format: {
@@ -34,16 +34,16 @@ const props = defineProps({
     default: false,
   },
 });
-const emit = defineEmits(['update:format', 'update:text']);
+const emit = defineEmits(["update:format", "update:text"]);
 
 const selectedOption = computed({
   get: () => OPTIONS.indexOf(props.format),
-  set: (value) => emit('update:format', OPTIONS[value] || OPTIONS[0]),
+  set: (value) => emit("update:format", OPTIONS[value] || OPTIONS[0]),
 });
 
 const textProperty = computed({
   get: () => props.text,
-  set: (value) => emit('update:text', value),
+  set: (value) => emit("update:text", value),
 });
 </script>
 

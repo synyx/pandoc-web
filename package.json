@@ -26,6 +26,7 @@
   "scripts": {
     "build": "vite build",
     "dev": "vite",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint": "prettier --check ."
   }
 }

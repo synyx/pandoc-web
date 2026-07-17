@@ -13,7 +13,7 @@ or use the container image to self-host it.
 
 This project only covers our own small use case of converting Markdown and Textile.
 If you are looking for a project that offers more options that Pandoc provides,
-check out the [pandoc-wasm web app](https://pandoc.github.io/pandoc-wasm/) ([repository](https://github.com/pandoc/pandoc-wasm)). 
+check out the [pandoc-wasm web app](https://pandoc.github.io/pandoc-wasm/) ([repository](https://github.com/pandoc/pandoc-wasm)).
 
 ## Container image
 

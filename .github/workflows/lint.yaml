@@ -1,9 +1,9 @@
-name: build
+name: lint
 
 on:
   pull_request:
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.0
@@ -11,7 +11,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           cache: "pnpm"
-      - name: Build app
+      - name: Lint app
         run: |
           pnpm ci
-          pnpm build
+          pnpm lint

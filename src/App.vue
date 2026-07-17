@@ -20,9 +20,9 @@
 </template>
 
 <script setup lang="ts">
-import ThemeToggle from '@/components/ThemeToggle.vue';
-import PandocConverter from '@/components/PandocConverter.vue';
-import GitHubLink from '@/components/GitHubLink.vue';
+import ThemeToggle from "@/components/ThemeToggle.vue";
+import PandocConverter from "@/components/PandocConverter.vue";
+import GitHubLink from "@/components/GitHubLink.vue";
 </script>
 
 <style scoped>

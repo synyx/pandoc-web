@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-btn-toggle class="toggle-area" mandatory="mandatory" v-model="selectedOption">
+    <v-btn-toggle class="toggle-area" mandatory v-model="selectedOption">
       <v-btn color="primary">Markdown</v-btn>
       <v-btn color="primary">Textile</v-btn>
     </v-btn-toggle>
@@ -15,7 +15,7 @@
   </v-container>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { computed } from 'vue';
 
 const OPTIONS = ['gfm', 'textile'];

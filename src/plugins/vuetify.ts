@@ -3,7 +3,7 @@ import 'vuetify/styles';
 
 // Composables
 import { createVuetify } from 'vuetify';
-import { getSavedTheme } from '@/helpers/Theme';
+import { getSavedTheme } from '@/helpers/Theme.ts';
 
 // https://vuetifyjs.com/en/introduction/why-vuetify/#feature-guides
 export default createVuetify({

@@ -9,7 +9,11 @@ Pandoc is fully run in your browser via [WebAssembly](https://webassembly.org/in
 No data is leaving your browser.
 
 Use it here (hosted via GitHub pages): https://synyx.github.io/pandoc-web/
-Or use the container image to self-host it.
+or use the container image to self-host it.
+
+This project only covers our own small use case of converting Markdown and Textile.
+If you are looking for a project that offers more options that Pandoc provides,
+check out the [pandoc-wasm web app](https://pandoc.github.io/pandoc-wasm/) ([repository](https://github.com/pandoc/pandoc-wasm)). 
 
 ## Container image
 

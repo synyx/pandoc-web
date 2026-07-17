@@ -8,10 +8,13 @@ Instead of having to use the command line, it provides a simple-to-use web inter
 Pandoc is fully run in your browser via [WebAssembly](https://webassembly.org/index.html) and [pandoc-wasm](https://github.com/pandoc/pandoc-wasm).
 No data is leaving your browser.
 
-## Docker image
+Use it here (hosted via GitHub pages): https://synyx.github.io/pandoc-web/
+Or use the container image to self-host it.
 
-A docker image is provided to be able to self-host the tool.
-You can run this via Docker using the published package:
+## Container image
+
+A container image is provided to be able to self-host the tool.
+You can run this e.g. via Docker using the published package:
 
 ```shell
 docker run --rm -p 8080:80 ghcr.io/synyx/pandocweb:latest

@@ -5,8 +5,12 @@ Instead of having to use the command line, it provides a simple-to-use web inter
 
 ![PandocWeb Screenshot](repo/pandocweb.png)
 
+Pandoc is fully run in your browser via [WebAssembly](https://webassembly.org/index.html) and [pandoc-wasm](https://github.com/pandoc/pandoc-wasm).
+No data is leaving your browser.
+
 ## Docker image
 
+A docker image is provided to be able to self-host the tool.
 You can run this via Docker using the published package:
 
 ```shell
@@ -20,34 +24,25 @@ You can now open the web interface locally on http://localhost:8080.
 First install all dependencies:
 
 ```shell
-npm install
+pnpm install
 ```
 
 then run the application in dev mode:
 
 ```shell
-npm run dev
+pnpm dev
 ```
 
-You will be able to access the dev application on port `8081`.
+You will be able to access the dev application on port `5173` (by default).
+Otherwise, the console will log the port.
 
 ## Building
 
 Run:
 
 ```shell
-npm run build
+pnpm build
 ```
-
-You will be able to start your application in the project root the following way:
-
-```shell
-node ./backend/src/main.js
-```
-
-The application will now be running on port `8080` and serve the frontend as well as the API.
-
-Running the application expects Pandoc to be installed on your machine and be accessible with the configured `PATH` env variable.
 
 ## License
 

@@ -9,6 +9,7 @@
           </div>
         </template>
         <template #append>
+          <GitHubLink />
           <ThemeToggle />
         </template>
       </v-app-bar>
@@ -21,6 +22,7 @@
 <script setup lang="ts">
 import ThemeToggle from '@/components/ThemeToggle.vue';
 import PandocConverter from '@/components/PandocConverter.vue';
+import GitHubLink from '@/components/GitHubLink.vue';
 </script>
 
 <style scoped>

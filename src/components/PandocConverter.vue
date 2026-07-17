@@ -1,7 +1,12 @@
 <template>
-  <div class="pandoc-converter">
-    <PandocTextField v-model:format="firstFormat" v-model:text="inputText" />
-    <PandocTextField v-model:format="secondFormat" :text="outputText" read-only />
+  <div class="pandoc-main">
+    <div class="pandoc-converter">
+      <PandocTextField v-model:format="firstFormat" v-model:text="inputText" />
+      <PandocTextField v-model:format="secondFormat" :text="outputText" read-only />
+    </div>
+    <div class="text-fields-footer">
+      <span>Pandoc fully runs in your browser using pandoc-wasm. No data is transmitted.</span>
+    </div>
   </div>
 </template>
 
@@ -43,12 +48,18 @@ watch([inputText, firstFormat], () => {
 </script>
 
 <style scoped>
+.pandoc-main {
+  padding: 1rem 1.5rem;
+  height: 100%;
+}
+
 .pandoc-converter {
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 1rem;
+}
 
-  padding: 1rem 1.5rem;
-  height: 100%;
+.text-fields-footer {
+  padding: 0 1rem;
 }
 </style>

@@ -5,14 +5,15 @@
       <PandocTextField
         v-model:format="secondFormat"
         :text="outputText"
+        :loading="loadingPandoc"
         read-only
       />
     </div>
     <div class="text-fields-footer">
-      <span
-        >Pandoc fully runs in your browser using pandoc-wasm. No data is
-        transmitted.</span
-      >
+      <span>
+        Pandoc fully runs in your browser using pandoc-wasm. No data is
+        transmitted.
+      </span>
     </div>
   </div>
 </template>
@@ -20,7 +21,7 @@
 <script setup lang="ts">
 import PandocTextField from "@/components/PandocTextField.vue";
 import { computed, ref, watch } from "vue";
-import { convert } from "pandoc-wasm";
+import type { convert } from "pandoc-wasm";
 import { debounce } from "@/helpers/Debounce";
 
 const INPUT_DEBOUNCE_DELAY_IN_MS = 500;
@@ -38,8 +39,22 @@ const secondFormat = computed({
   set: (value) => (inputFormat.value = value === "gfm" ? "textile" : "gfm"),
 });
 
+let asyncConvert: typeof convert | undefined;
+const loadingPandoc = ref(true);
+async function fetchPandocWasm() {
+  import("pandoc-wasm")
+    .then((res) => {
+      asyncConvert = res.convert;
+    })
+    .finally(() => {
+      loadingPandoc.value = false;
+    });
+}
+
 function runPandoc() {
-  convert(
+  if (!asyncConvert) return;
+
+  asyncConvert(
     {
       from: firstFormat.value,
       to: secondFormat.value,
@@ -52,9 +67,11 @@ function runPandoc() {
 }
 const debouncedRunPandoc = debounce(runPandoc, INPUT_DEBOUNCE_DELAY_IN_MS);
 
-watch([inputText, firstFormat], () => {
+watch([inputText, firstFormat, loadingPandoc], () => {
   debouncedRunPandoc();
 });
+
+fetchPandocWasm();
 </script>
 
 <style scoped>

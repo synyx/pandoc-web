@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="text-field-container">
     <v-btn-toggle class="toggle-area" mandatory v-model="selectedOption">
       <v-btn color="primary">Markdown</v-btn>
       <v-btn color="primary">Textile</v-btn>
@@ -12,6 +12,12 @@
       :no-resize="true"
       :hide-details="true"
     ></v-textarea>
+    <transition name="loading">
+      <div v-if="loading" class="loading-overlay">
+        <v-progress-circular indeterminate color="primary" />
+        <span class="loading-overlay-text">Downloading Pandoc WASM</span>
+      </div>
+    </transition>
   </v-container>
 </template>
 
@@ -20,20 +26,18 @@ import { computed } from "vue";
 
 const OPTIONS = ["gfm", "textile"];
 
-const props = defineProps({
-  format: {
-    type: String,
-    required: true,
+const props = withDefaults(
+  defineProps<{
+    format: string;
+    text: string;
+    readOnly?: boolean;
+    loading?: boolean;
+  }>(),
+  {
+    readOnly: false,
+    loading: false,
   },
-  text: {
-    type: String,
-    required: true,
-  },
-  readOnly: {
-    type: Boolean,
-    default: false,
-  },
-});
+);
 const emit = defineEmits(["update:format", "update:text"]);
 
 const selectedOption = computed({
@@ -50,5 +54,33 @@ const textProperty = computed({
 <style scoped>
 .toggle-area {
   margin-bottom: 1rem;
+}
+
+.text-field-container {
+  position: relative;
+}
+
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: light-dark(rgba(210, 210, 210, 0.8), rgba(20, 20, 20, 0.8));
+}
+
+.loading-overlay-text {
+  margin-left: 0.5em;
+}
+
+.loading-enter-active,
+.loading-leave-active {
+  transition: opacity 0.25s ease-in-out;
+}
+
+.loading-enter-from,
+.loading-leave-to {
+  opacity: 0;
 }
 </style>

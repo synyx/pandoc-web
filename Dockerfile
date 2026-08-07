@@ -1,4 +1,4 @@
-FROM node:26.5.0-alpine AS build
+FROM node:26.5.1-alpine AS build
 
 WORKDIR /app
 RUN mkdir data
@@ -12,7 +12,7 @@ RUN npm install --global corepack@latest \
 
 #######################################
 
-FROM node:26.5.0-alpine AS node
+FROM node:26.5.1-alpine AS node
 FROM nginx:1.31.3-alpine-slim
 
 COPY --from=build /app/dist/ /usr/share/nginx/html/

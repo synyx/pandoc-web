@@ -13,6 +13,6 @@ RUN npm install --global corepack@latest \
 #######################################
 
 FROM node:26.7.0-alpine AS node
-FROM nginx:1.31.3-alpine-slim
+FROM nginx:1.31.4-alpine-slim
 
 COPY --from=build /app/dist/ /usr/share/nginx/html/

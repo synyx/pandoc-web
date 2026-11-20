@@ -12,7 +12,7 @@
     "vuetify": "4.3.3"
   },
   "devDependencies": {
-    "@tsconfig/node24": "24.0.5",
+    "@tsconfig/node24": "24.0.6",
     "@types/node": "26.6.6",
     "@vitejs/plugin-vue": "6.0.10",
     "@vue/tsconfig": "0.9.1",
